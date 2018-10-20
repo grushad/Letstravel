@@ -3,6 +3,7 @@
 <head>
 	<title>Letstravel</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500" rel="stylesheet">
 	<link rel="shortcut icon" href="images/favicon.png">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
@@ -12,13 +13,13 @@
 		<p class="heading" style="color: white">LetsTravel</p>
 		<div class="center-container">
 			<div class="formWindow" id="userRegisterWindow">
-				<form>
-					<p class="label">First Name <input class="userFormInput" type="text" name="userFirstName" placeholder="Enter First Name"></p>
-					<p class="label">Last Name <input class="userFormInput" type="text" name="userLastName" placeholder="Enter Last Name"></p>
-					<p class="label">Email <input  class="userFormInput" type="email" name="userEmail" placeholder="Enter Email"></p>
-					<p class="label">Mobile <input class="userFormInput" type="text" name="userContact" placeholder="Enter Mobile Number"></p>
-					<p class="label">Password <input class="userFormInput" type="password" name="userPasswd" placeholder="Enter Password"></p>
-					<p class="label">Confirm Password <input class="userFormInput" type="password" name="userPasswdConf" placeholder="Confirm Password"></p>
+				<form action="register.php" method="post">
+					<p class="label"><span>First Name</span> <input class="userFormInput" type="text" name="userFirstName" placeholder="Enter First Name" id="fname" onblur="return checkname(this);" required><span id="fn"></span></p>
+					<p class="label"><span>Last Name</span> <input class="userFormInput" type="text" name="userLastName" placeholder="Enter Last Name" id="lname" onblur="return checkname(this);" required><span id="ln"></span></p>
+					<p class="label"><span>Email</span> <input  class="userFormInput" type="email" name="userEmail" placeholder="Enter Email" id="email" onblur="return checkmail();" required><span id="eid"></span></p>
+					<p class="label"><span>Mobile </span><input class="userFormInput" type="text" name="userContact" placeholder="Enter Mobile Number" id="mob" onblur="return checkmob();" required><span id="mobile"></span></p>
+					<p class="label"><span>Password</span> <input class="userFormInput" type="password" name="userPasswd" placeholder="Enter Password" id="pw" required></p>
+					<p class="label"><span>Confirm Password </span><input class="userFormInput" type="password" name="userPasswdConf" placeholder="Confirm Password" id="cpw" onblur="return checkpwd();" required><span id="cpwd"></span></p>
 					<p><input type="submit" name="register" class="yellowBtn" value="Sign Up"></p>
 					<p class="formText">Already have an account? Click to <a href=userlogin.html style="text-decoration: none; color: #ffc312;">Log in</a></p>
 					<p class="formText">By signing up, you agree to LetsTravel's <a href=# style="text-decoration: none; color: #ffc312;">Terms and Conditions</a>.</p>
@@ -28,4 +29,5 @@
 	</div>
 	
 </body>
+<script type="text/javascript" src="js/validation.js"></script>
 </html>
